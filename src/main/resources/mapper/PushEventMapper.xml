@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stelo.simpleops.git.mapper.PushEventMapper">
+  <resultMap id="BaseResultMap" type="com.stelo.simpleops.git.domain.PushEvent">
+    <!--@mbg.generated generated on Mon Nov 04 17:17:06 CST 2019.-->
+    <!--@Table push_event-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="project_id" jdbcType="BIGINT" property="projectId" />
+    <result column="event_source" jdbcType="TINYINT" property="eventSource" />
+    <result column="head_commit_hash" jdbcType="VARCHAR" property="headCommitHash" />
+    <result column="head_commit_message" jdbcType="VARCHAR" property="headCommitMessage" />
+    <result column="head_commit_url" jdbcType="VARCHAR" property="headCommitUrl" />
+    <result column="head_committer" jdbcType="VARCHAR" property="headCommitter" />
+    <result column="ref" jdbcType="VARCHAR" property="ref" />
+    <result column="last_commit_hash" jdbcType="VARCHAR" property="lastCommitHash" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="created_date" jdbcType="TIMESTAMP" property="createdDate" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.stelo.simpleops.git.domain.PushEvent">
+    <!--@mbg.generated generated on Mon Nov 04 17:17:06 CST 2019.-->
+    <!--@Table push_event-->
+    <result column="payload" jdbcType="BLOB" property="payload" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Mon Nov 04 17:17:06 CST 2019.-->
+    id, project_id, event_source, head_commit_hash, head_commit_message, head_commit_url, 
+    head_committer, `ref`, last_commit_hash, `status`, created_date
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--@mbg.generated generated on Mon Nov 04 17:17:06 CST 2019.-->
+    payload
+  </sql>
+</mapper>

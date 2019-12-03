@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: test
+  messages:
+    basename: i18n/messages
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 1000
+        one-indexed-parameters: true
+        size-parameter: pageSize
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/changelog-master.xml
+  jackson:
+    default-property-inclusion: non_null
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    default-enum-type-handler: com.stelo.simpleops.utils.CustomEnumTypeHandler
+  mapper-locations: classpath*:/mapper/*/*.xml,classpath:mapper/*.xml
+mapper:
+  wrap-keyword: '`{0}`'
+
+
+logging:
+  level:
+    com.stelo: debug
+
+server:
+  port: 5800
